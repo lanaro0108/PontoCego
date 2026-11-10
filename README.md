@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/branding/png/logo-horizontal-transparent.png" width="680" alt="Ponto Cego — olho sobre marcador de localização" />
+<img src="assets/branding/png/logo-horizontal-white-transparent.png" width="680" alt="Ponto Cego — olho sobre marcador de localização" />
 
 ### Tornando visíveis as barreiras que passam despercebidas.
 
