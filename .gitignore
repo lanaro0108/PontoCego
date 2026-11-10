@@ -1,9 +1,0 @@
-node_modules/
-.next/
-build/
-dist/
-.dart_tool/
-.env
-.env.*
-!.env.example
-__pycache__/
