@@ -1,0 +1,37 @@
+name: Gerar PNGs dos assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/**/svg/**'
+      - 'scripts/render_branding.py'
+      - '.github/workflows/render-branding.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar CairoSVG
+        run: python -m pip install 'cairosvg==2.7.1'
+      - name: Renderizar PNG
+        run: python scripts/render_branding.py
+      - name: Commit e push dos PNGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/branding/png assets/wireframes/png
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: exportar imagens PNG dos logos e wireframes"
+            git push origin HEAD:main
+          fi
