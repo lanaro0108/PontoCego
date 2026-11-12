@@ -95,3 +95,43 @@ A plataforma deverá atender requisitos de **teclado, contraste, rótulos de for
 ---
 
 <div align="center"><strong>Projeto acadêmico de Desenvolvimento de Sistemas · SENAI</strong><br/>Documentação inicial, sujeita a validação.</div>
+
+## Landing page
+
+A apresentação do projeto está implementada neste repositório com **Next.js (App Router), TypeScript, Tailwind CSS, Motion e Lucide React**. Esta entrega é uma landing page: as telas do aplicativo e da gestão são demonstrações conceituais, identificadas com dados ilustrativos. O produto descrito acima permanece em planejamento, sem backend implementado nesta entrega.
+
+### Executar localmente
+
+Requisito: **Node.js 20.9 ou superior** e npm.
+
+```bash
+npm ci
+npm run dev
+```
+
+Abra [http://localhost:3000](http://localhost:3000).
+
+### Verificar e gerar a versão de produção
+
+```bash
+npm run check   # ESLint e TypeScript
+npm run build   # exportação estática em out/
+npm start       # prévia local do build em http://localhost:3000
+```
+
+Para outra porta na prévia estática, configure a variável de ambiente `PORT`. A pasta `out/` pode ser servida por uma hospedagem estática; não requer API, banco de dados ou variáveis secretas. O servidor de `npm start` é uma prévia local, não um backend do produto.
+
+### Organização
+
+```text
+src/app/                  Página, estilos, fontes locais e metadados
+src/components/           Header, hero, comparativo, fluxo e mockups reutilizáveis
+src/lib/site.ts           URL e informações de SEO da landing page
+scripts/prepare-landing-assets.mjs  Cópias públicas geradas a partir da marca original
+scripts/serve-static.mjs   Servidor de prévia da exportação estática
+assets/branding/          Identidade visual original, preservada
+```
+
+`npm run dev` e `npm run build` preparam automaticamente as cópias dos SVGs em `public/branding/`. Os assets originais e os wireframes não são modificados. A fonte variável **Plus Jakarta Sans** é hospedada localmente, com licença em `src/app/fonts/LICENSE`.
+
+A landing inclui menu mobile com diálogo nativo, foco visível, link de salto, controles por teclado, comparativo antes/depois e etapas selecionáveis. Em desktop, o scroll também destaca as etapas do fluxo. As animações respeitam `prefers-reduced-motion`; o conteúdo permanece disponível sem JavaScript. Open Graph, ícone, sitemap e robots são gerados no build. Ao trocar a hospedagem, atualize a URL em `src/lib/site.ts`.
