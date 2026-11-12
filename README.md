@@ -16,7 +16,7 @@
 
 Barreiras físicas e de orientação nem sempre têm um canal claro de registro, priorização e acompanhamento. O **Ponto Cego** propõe aproximar a comunidade dos responsáveis pelos espaços, transformando relatos em ações rastreáveis.
 
-> **Projeto em fase de planejamento:** a ocorrência e as características desse problema no SENAI ainda precisam ser verificadas em pesquisa de campo. Não há aplicativo implementado nem garantia de acessibilidade de qualquer ambiente.
+> **Projeto em fase de planejamento e validação:** a ocorrência e as características desse problema no SENAI ainda precisam ser verificadas em pesquisa de campo. O aplicativo em `mobile/` possui um modo demonstrativo local; backend e integração institucional ainda não foram implementados. Não há garantia de acessibilidade de qualquer ambiente.
 
 ## Como funcionará
 
@@ -95,6 +95,10 @@ A plataforma deverá atender requisitos de **teclado, contraste, rótulos de for
 ---
 
 <div align="center"><strong>Projeto acadêmico de Desenvolvimento de Sistemas · SENAI</strong><br/>Documentação inicial, sujeita a validação.</div>
+
+## Aplicativo mobile
+
+O módulo Flutter está em [`mobile/`](mobile/README.md), com login e cadastro demonstrativos, registro de barreiras, câmera/galeria, seleção de ambientes, filtros, histórico e preferências de acessibilidade. Sessão e dados ficam salvos localmente. Consulte o [README do aplicativo](mobile/README.md) para execução, conta de demonstração, arquitetura, testes e limitações da integração futura.
 
 ## Landing page
 
