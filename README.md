@@ -134,4 +134,15 @@ assets/branding/          Identidade visual original, preservada
 
 `npm run dev` e `npm run build` preparam automaticamente as cópias dos SVGs em `public/branding/`. Os assets originais e os wireframes não são modificados. A fonte variável **Plus Jakarta Sans** é hospedada localmente, com licença em `src/app/fonts/LICENSE`.
 
-A landing inclui menu mobile com diálogo nativo, foco visível, link de salto, controles por teclado, comparativo antes/depois e etapas selecionáveis. Em desktop, o scroll também destaca as etapas do fluxo. As animações respeitam `prefers-reduced-motion`; o conteúdo permanece disponível sem JavaScript. Open Graph, ícone, sitemap e robots são gerados no build. Ao trocar a hospedagem, atualize a URL em `src/lib/site.ts`.
+A landing inclui menu mobile com diálogo nativo, foco visível, link de salto, controles por teclado, comparativo antes/depois e etapas selecionáveis. Em desktop, o scroll também destaca as etapas do fluxo. As animações respeitam `prefers-reduced-motion`; o conteúdo permanece disponível sem JavaScript. Open Graph, ícone, sitemap e robots são gerados no build.
+
+### Publicar no Netlify
+
+Na sua conta [Netlify](https://app.netlify.com/start), importe o repositório `lanaro0108/PontoCego` pelo GitHub e selecione a branch `main`. O arquivo `netlify.toml` define automaticamente:
+
+- Diretório base: raiz do repositório.
+- Comando de build: `npm run build`.
+- Diretório de publicação: `out`.
+- Node.js: versão 22.
+
+A publicação é estática. O build utiliza a variável `URL` fornecida pelo Netlify para o endereço canônico, Open Graph, sitemap e robots. Para usar um domínio personalizado como endereço canônico, configure `NEXT_PUBLIC_SITE_URL` com a URL completa e execute um novo deploy. Não são necessárias credenciais no código da landing page.
