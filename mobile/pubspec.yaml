@@ -1,0 +1,35 @@
+name: ponto_cego
+description: "Ponto Cego — aplicativo comunitário demonstrativo com persistência local."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.10.9
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  go_router: ^16.3.0
+  dio: ^5.9.0
+  shared_preferences: ^2.5.3
+  image_picker: ^1.2.1
+  cryptography: ^2.7.0
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/branding/
+    - assets/fonts/LICENSE
+  fonts:
+    - family: PlusJakartaSans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans.ttf
