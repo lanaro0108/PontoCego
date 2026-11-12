@@ -1,0 +1,10 @@
+node_modules/
+.next/
+next-env.d.ts
+out/
+public/branding/
+*.tsbuildinfo
+.env*
+!.env.example
+work/
+.DS_Store
